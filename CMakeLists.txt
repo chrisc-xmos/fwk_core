@@ -21,10 +21,10 @@ set(FRAMEWORK_CORE_ROOT_PATH ${PROJECT_SOURCE_DIR} CACHE STRING "Root folder of 
 add_subdirectory(modules)
 
 ## Add targets for when this is the top level project
-if(PROJECT_IS_TOP_LEVEL)
-    include(examples/examples.cmake)
-endif()
+#if(PROJECT_IS_TOP_LEVEL)
+#    include(examples/examples.cmake)
+#endif()
 
-if(FRAMEWORK_CORE_TESTS)
+#if(FRAMEWORK_CORE_TESTS)
     include(test/tests.cmake)
-endif()
+#endif()

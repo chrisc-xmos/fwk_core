@@ -13,17 +13,16 @@ set (APPLICATION_NAME map_test)
 enable_language(C)
 
 ## Import some helpful build macros
-#include(modules/fwk_rtos/tools/cmake_utils/xmos_macros.cmake)
+include(modules/fwk_rtos/tools/cmake_utils/xmos_macros.cmake)
 
 
 ## Gather customer source files
-#file(GLOB_RECURSE APP_SOURCES
+file(GLOB_RECURSE APP_SOURCES
 #  ${CMAKE_CURRENT_LIST_DIR}/../../src/tile_map.xc
-#  ${CMAKE_CURRENT_LIST_DIR}/../../src/tile_map_defaults.c
-#  ${CMAKE_CURRENT_LIST_DIR}/src/*.c
-#)
+  ${CMAKE_CURRENT_LIST_DIR}/../../src/tile_map_defaults.c
+  ${CMAKE_CURRENT_LIST_DIR}/src/*.c
+)
 #set (APP_SOURCES ${CMAKE_CURRENT_LIST_DIR}/../../src/tile_map_defaults.c)
-set (APP_SOURCES ${CMAKE_CURRENT_LIST_DIR}/src/test.c)
 
 ## Set directory for customer header files
 set(APP_INCLUDES ${CMAKE_CURRENT_LIST_DIR}/src)
@@ -35,7 +34,6 @@ set(MAX_TILES 1)
 math(EXPR COMBINATION_RANGE "(1<<${MAX_TILES}) - 1" OUTPUT_FORMAT DECIMAL)
 math(EXPR TILE_RANGE "${MAX_TILES} - 1" OUTPUT_FORMAT DECIMAL)
 
-set (APP_LINK_LIBRARIES framework_core_multitile_support)
 
 ## Compiler flags. Note that .xscope and .xn files are added here.
 set(APP_COMPILER_FLAGS
@@ -45,8 +43,7 @@ set(APP_COMPILER_FLAGS
     -fxscope
     -mcmodel=large
     -Wno-xcore-fptrgroup
-    -target=XCORE-AI-EXPLORER
-    ../..
+    ${CMAKE_CURRENT_LIST_DIR}/XCORE-AI-EXPLORER.xn
 )
 
 ## Link flags. Note that .xscope and .xn files are also added here.

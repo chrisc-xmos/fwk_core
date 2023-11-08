@@ -14,8 +14,9 @@ Please see the multi-tile support module README for further details.
 
 #include <xcore/chanend.h>
 
-extern "C" 
-{
+#ifdef __XC__
+extern "C" {
+#endif //__XC__
 
 #ifndef MINIMISE_MAIN_TILE_ARGS
 
@@ -234,5 +235,10 @@ MAIN3_HEAD MAIN3_ARG0 MAIN3_ARG1 MAIN3_ARG2 MAIN3_ARG3 MAIN_TAIL
 #endif // ----------------- End tile 3 prototype --------------------------                 
 
 #endif // MINIMISE_MAIN_TILE_ARGS
+
+
+#ifdef __XC__
 }
+#endif //__XC__
+
  

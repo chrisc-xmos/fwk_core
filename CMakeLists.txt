@@ -26,5 +26,5 @@ add_subdirectory(modules)
 #endif()
 
 #if(FRAMEWORK_CORE_TESTS)
-    include(test/tests.cmake)
+    add_subdirectory(tests)
 #endif()

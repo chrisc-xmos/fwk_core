@@ -46,7 +46,6 @@ set(APP_COMPILER_FLAGS
     -mcmodel=large
     -Wno-xcore-fptrgroup
     -target=XCORE-AI-EXPLORER
-    ../..
 )
 
 ## Link flags. Note that .xscope and .xn files are also added here.
@@ -59,7 +58,10 @@ set(APP_LINK_OPTIONS
 
 
 ## Compilation settings.
-set(BASE_APP_COMPILE_DEFINITIONS "DEBUG_PRINT_ENABLE=1 XUD_CORE_CLOCK=600")
+set(BASE_APP_COMPILE_DEFINITIONS 
+  DEBUG_PRINT_ENABLE=1 
+  XUD_CORE_CLOCK=600
+)
 
 foreach(USES RANGE ${COMBINATION_RANGE})
   foreach(SUPPORTS RANGE ${COMBINATION_RANGE})
@@ -95,7 +97,6 @@ foreach(USES RANGE ${COMBINATION_RANGE})
       
       set(TARGET map_test_${USES}_${SUPPORTS})
       message(${TARGET})
-      message(APP_COMPILE_DEFINITIONS: ${APP_COMPILE_DEFINITIONS})
       message(APP_SOURCES: ${APP_SOURCES})
       message(APP_INCLUDES: ${APP_INCLUDES})
       message(APP_COMPILE_DEFINITIONS: ${APP_COMPILE_DEFINITIONS})

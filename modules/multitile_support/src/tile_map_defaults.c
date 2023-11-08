@@ -41,7 +41,7 @@ void main_tile3(chanend_t c0, chanend_t c1, chanend_t c2, chanend_t c3)
     return;
 }
 
-else // MINIMISE_MAIN_TILE_ARGS defined
+#else // MINIMISE_MAIN_TILE_ARGS defined
 
 
 // -------------------- Tile 0 weak implementation ------------------------------

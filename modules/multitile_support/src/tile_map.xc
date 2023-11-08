@@ -27,10 +27,10 @@ Please the multi-tile support module README for further details.
 
 #include "platform.h"
 
+
+#include "main_tile.h"
+
 extern "C" {
-
-#include "main_tile.h
-
 #if (XSCOPE_HOST_IO_ENABLED == 1)
 #ifndef XSCOPE_HOST_IO_TILE
 #define XSCOPE_HOST_IO_TILE 0

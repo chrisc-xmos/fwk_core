@@ -30,8 +30,8 @@ set(APP_INCLUDES ${CMAKE_CURRENT_LIST_DIR}/src)
 
 ## Set tile usage list to use as a foreach loop variable
 ## This is application and device specific
-set(MAX_TILES 1)
-#set(MAX_TILES 4)
+#set(MAX_TILES 1)
+set(MAX_TILES 4)
 math(EXPR COMBINATION_RANGE "(1<<${MAX_TILES}) - 1" OUTPUT_FORMAT DECIMAL)
 math(EXPR TILE_RANGE "${MAX_TILES} - 1" OUTPUT_FORMAT DECIMAL)
 

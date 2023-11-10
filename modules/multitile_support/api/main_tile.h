@@ -10,13 +10,24 @@ errors to be picked up at compile time rather than at the link stage.
 
 Please see the multi-tile support module README for further details.      
 */
-#include <platform.h>
 
-#include <xcore/chanend.h>
+
+//#include <platform.h>
+//#include <xcore/chanend.h>
 
 #ifdef __XC__
+
 extern "C" {
+#define chanend_t chanend
+
+#else
+
+#include <platform.h>
+#include <xcore/chanend.h>
+
 #endif //__XC__
+
+
 
 #ifndef MINIMISE_MAIN_TILE_ARGS
 

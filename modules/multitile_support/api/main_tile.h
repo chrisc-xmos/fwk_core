@@ -24,7 +24,6 @@ extern "C" {
 
 #include <platform.h>
 #include <xcore/chanend.h>
-
 #endif //__XC__
 
 
@@ -253,3 +252,5 @@ MAIN3_HEAD MAIN3_ARG0 MAIN3_ARG1 MAIN3_ARG2 MAIN3_ARG3 MAIN_TAIL
 #endif //__XC__
 
  
+
+
